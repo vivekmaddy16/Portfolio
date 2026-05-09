@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vivek Maddheshiya — Full Stack Developer</title>
+  <meta name="description" content="Portfolio of Vivek Maddheshiya — Full Stack Developer specializing in React, Node.js, and scalable web applications.">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+  <div class="custom-cursor" id="cursor"></div>
+
+  <!-- Nav -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="nav-logo">Vivek Maddheshiya</a>
+    <div class="nav-center">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+      B.Tech CSE · BBD University
+    </div>
+    <div class="nav-hamburger" id="menuToggle"><span></span></div>
+    <div class="nav-menu" id="navMenu">
+      <a href="#home">Home</a><a href="#aboutme">About</a><a href="#education">Education</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-title reveal">
+      <h1>Hi I'm Vivek<br><em>Full Stack Developer</em></h1>
+    </div>
+    <div class="hero-photo-center reveal">
+      <img src="assets/profile.png" alt="Vivek Maddheshiya">
+      <div class="hero-badge"><span class="dot"></span> Available for new opportunities</div>
+      <div class="hero-desc">passionate about building scalable web applications and creating digital experiences that connect users with value.</div>
+      <div class="hero-cta-wrap"><a href="#contact" class="hero-cta">→ Get in Touch</a></div>
+      <div class="hero-avatars">
+        <img src="assets/profile.png" alt=""><img src="assets/profile.png" alt=""><img src="assets/profile.png" alt="">
+        <div class="hero-avatars-info"><strong>Trusted by</strong>BBD University, Projects</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trusted -->
+  <div class="trusted reveal">
+    <span class="trusted-label">Tech Stack</span>
+    <div class="trusted-logos">
+      <span><span class="tdot"></span> React</span>
+      <span><span class="tdot"></span> Node.js</span>
+      <span><span class="tdot"></span> MongoDB</span>
+      <span><span class="tdot"></span> Python</span>
+      <span><span class="tdot"></span> JavaScript</span>
+      <span><span class="tdot"></span> Git</span>
+    </div>
+  </div>
+
+  <!-- About Me -->
+  <section class="aboutme" id="aboutme">
+    <div class="aboutme-grid">
+      <div class="aboutme-left reveal">
+        <span class="aboutme-lbl">/ About Me /</span>
+        <h2 class="aboutme-title">A Passionate<br>Developer</h2>
+        <p class="aboutme-desc">I'm a third-year B.Tech Computer Science student at BBD University, Lucknow with a CGPA of 7.89. I have strong foundations in data structures, algorithms, and object-oriented programming with hands-on experience in building scalable web applications.</p>
+        <p class="aboutme-desc" style="margin-top:-16px;">Passionate about learning new technologies and contributing to reliable, high-quality software in collaborative team environments.</p>
+        <div class="aboutme-stats">
+          <div class="aboutme-stat reveal"><span class="aboutme-stat-num">5+</span><span class="aboutme-stat-lbl">Projects Built</span></div>
+          <div class="aboutme-stat reveal"><span class="aboutme-stat-num">4</span><span class="aboutme-stat-lbl">Certifications</span></div>
+          <div class="aboutme-stat reveal"><span class="aboutme-stat-num">7.89</span><span class="aboutme-stat-lbl">CGPA</span></div>
+        </div>
+      </div>
+      <div class="aboutme-right reveal">
+        <div class="aboutme-skills">
+          <h3>Technical Skills</h3>
+          <div class="aboutme-skill-group"><span class="aboutme-skill-label">Languages</span><div class="aboutme-skill-tags"><span class="aboutme-skill">C++</span><span class="aboutme-skill">Python</span><span class="aboutme-skill">SQL</span><span class="aboutme-skill">JavaScript</span></div></div>
+          <div class="aboutme-skill-group"><span class="aboutme-skill-label">Web Technologies</span><div class="aboutme-skill-tags"><span class="aboutme-skill">React.js</span><span class="aboutme-skill">Node.js</span><span class="aboutme-skill">HTML5</span><span class="aboutme-skill">CSS3</span></div></div>
+          <div class="aboutme-skill-group"><span class="aboutme-skill-label">Tools & Frameworks</span><div class="aboutme-skill-tags"><span class="aboutme-skill">Git</span><span class="aboutme-skill">REST APIs</span><span class="aboutme-skill">MongoDB</span><span class="aboutme-skill">React Router</span></div></div>
+          <div class="aboutme-skill-group"><span class="aboutme-skill-label">Core Concepts</span><div class="aboutme-skill-tags"><span class="aboutme-skill">DSA</span><span class="aboutme-skill">OOPs</span><span class="aboutme-skill">DBMS</span><span class="aboutme-skill">OS</span><span class="aboutme-skill">AI/ML</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Journey -->
+  <section class="education" id="education">
+    <div class="section-center">
+      <span class="edu-lbl reveal">/ Education /</span>
+      <h2 class="edu-title reveal">My Education Journey</h2>
+    </div>
+    <div class="edu-timeline">
+      <div class="edu-line"></div>
+      <div class="edu-item reveal" data-year="2023 — Present">
+        <div class="edu-card">
+          <div class="edu-icon">🎓</div>
+          <h3>B.Tech in Computer Science</h3>
+          <p class="edu-school">BBD University, Lucknow</p>
+          <p class="edu-detail">CGPA: 7.89</p>
+          <div class="edu-tags"><span>DSA</span><span>OOPs</span><span>DBMS</span><span>Full Stack</span></div>
+        </div>
+      </div>
+      <div class="edu-item reveal" data-year="2022">
+        <div class="edu-card">
+          <div class="edu-icon">📚</div>
+          <h3>Intermediate (Class XII)</h3>
+          <p class="edu-school">Board of High School & Intermediate, UP</p>
+          <p class="edu-detail">Percentage: 73.4%</p>
+          <div class="edu-tags"><span>Physics</span><span>Chemistry</span><span>Maths</span></div>
+        </div>
+      </div>
+      <div class="edu-item reveal" data-year="2020">
+        <div class="edu-card">
+          <div class="edu-icon">🏫</div>
+          <h3>High School (Class X)</h3>
+          <p class="edu-school">Board of High School & Intermediate, UP</p>
+          <p class="edu-detail">Percentage: 69%</p>
+          <div class="edu-tags"><span>Science</span><span>Maths</span><span>English</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="projects-section" id="projects">
+    <div class="section-center">
+      <span class="proj-lbl reveal">/ My Projects /</span>
+      <h2 class="proj-title reveal">Featured Projects</h2>
+    </div>
+    <div class="proj-grid">
+      <!-- Fixify -->
+      <div class="proj-card reveal">
+        <div class="proj-img"><img src="assets/fixify.png" alt="Fixify"></div>
+        <div class="proj-info">
+          <span class="proj-type">Full Stack Application</span>
+          <h3>Fixify — Hyperlocal Service Marketplace</h3>
+          <p>Engineered a scalable hyperlocal service marketplace enabling real-time connection between users and nearby service providers. Features location-based filtering, SOS emergency capabilities, and modular backend architecture.</p>
+          <div class="proj-tech"><span>React</span><span>Node.js</span><span>MongoDB</span><span>REST APIs</span></div>
+          <div class="proj-links">
+            <a href="https://github.com/vivekmaddy16" target="_blank" class="proj-link-btn">GitHub →</a>
+            <button class="proj-live-btn" onclick="openProjectPopup('fixify')">🔗 Live Preview</button>
+          </div>
+        </div>
+      </div>
+      <!-- HireBoost -->
+      <div class="proj-card reverse reveal">
+        <div class="proj-img"><img src="assets/hireboost.png" alt="HireBoost"></div>
+        <div class="proj-info">
+          <span class="proj-type">AI-Powered Tool</span>
+          <h3>HireBoost — Smart Resume Optimizer</h3>
+          <p>Built an AI-powered resume optimizer using NLP to align resumes with job descriptions. Features keyword extraction, ATS scoring, and automated bullet point generation using Gemini API for impactful resume content.</p>
+          <div class="proj-tech"><span>React</span><span>Node.js</span><span>Gemini API</span><span>NLP</span></div>
+          <div class="proj-links">
+            <a href="https://github.com/vivekmaddy16" target="_blank" class="proj-link-btn">GitHub →</a>
+            <button class="proj-live-btn" onclick="openProjectPopup('hireboost')">🔗 Live Preview</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Popup Modal -->
+  <div class="proj-popup" id="projectPopup">
+    <div class="proj-popup-overlay" onclick="closeProjectPopup()"></div>
+    <div class="proj-popup-content">
+      <button class="proj-popup-close" onclick="closeProjectPopup()">✕</button>
+      <h3 id="popupTitle"></h3>
+      <div class="proj-popup-frame">
+        <img id="popupImage" src="" alt="Project Preview">
+      </div>
+      <div class="proj-popup-actions">
+        <a id="popupGithub" href="" target="_blank" class="proj-link-btn">View on GitHub →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Process -->
+  <section class="process" id="process">
+    <span class="ps-lbl reveal">/ My Process /</span>
+    <h2 class="ps-title reveal">Here's how it works</h2>
+    <div class="p-cards">
+      <div class="p-arrows">
+        <svg class="arrow-1" viewBox="0 0 80 60" fill="none"><path d="M5 50 C25 10, 55 10, 75 35" stroke="#8fad5a" stroke-width="2.5" fill="none" stroke-linecap="round"/><polygon points="72,30 78,38 70,36" fill="#8fad5a"/></svg>
+        <svg class="arrow-2" viewBox="0 0 80 60" fill="none"><path d="M5 15 C25 55, 55 55, 75 25" stroke="#8fad5a" stroke-width="2.5" fill="none" stroke-linecap="round"/><polygon points="72,29 78,22 70,22" fill="#8fad5a"/></svg>
+      </div>
+      <div class="p-card reveal rd1"><div class="p-icon">🔍</div><div class="p-num">01</div><h3>Discover</h3><p>Understanding the problem domain, researching user needs, and designing scalable solutions.</p></div>
+      <div class="p-card reveal rd2"><div class="p-icon">🎨</div><div class="p-num">02</div><h3>Design</h3><p>Crafting intuitive user interfaces, building modular architectures, and responsive components.</p></div>
+      <div class="p-card reveal rd3"><div class="p-icon">✅</div><div class="p-num">03</div><h3>Deliver</h3><p>Building, testing, and deploying production-ready applications with optimized performance.</p></div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="certs">
+    <h2 class="certs-title reveal">Certifications</h2>
+    <div class="cert-grid">
+      <div class="cert-card reveal rd1"><div class="cert-q">"</div><p class="cert-txt">Completed MongoDB Developer's Toolkit covering CRUD mastery with Node.js, Java, Python, C#. Built scalable database solutions and optimized queries.</p><div class="cert-author"><div class="cert-icon">🍃</div><div class="cert-author-txt"><strong>MongoDB University</strong><span>Developer's Toolkit</span></div></div></div>
+      <div class="cert-card reveal rd2"><div class="cert-q">"</div><p class="cert-txt">Completed Tata Group's Data Visualisation program, transforming complex datasets into actionable visual insights for business decisions.</p><div class="cert-author"><div class="cert-icon">📊</div><div class="cert-author-txt"><strong>Tata Group</strong><span>Data Visualisation</span></div></div></div>
+      <div class="cert-card reveal rd1"><div class="cert-q">"</div><p class="cert-txt">Completed J.P. Morgan's Software Engineering simulation, building financial data feeds and fixing web trading platform interfaces.</p><div class="cert-author"><div class="cert-icon">💼</div><div class="cert-author-txt"><strong>J.P. Morgan</strong><span>Software Engineering</span></div></div></div>
+      <div class="cert-card reveal rd2"><div class="cert-q">"</div><p class="cert-txt">Completed Walmart USA's Advanced Software Engineering simulation, tackling complex challenges and implementing enterprise solutions.</p><div class="cert-author"><div class="cert-icon">🛒</div><div class="cert-author-txt"><strong>Walmart USA</strong><span>Advanced Engineering</span></div></div></div>
+    </div>
+  </section>
+
+  <!-- Get in Touch -->
+  <section class="contact" id="contact">
+    <div class="waves">
+      <svg viewBox="0 0 1440 320" preserveAspectRatio="none" style="opacity:.2"><path fill="rgba(107,140,62,.5)" d="M0,160L48,176C96,192,192,224,288,218.7C384,213,480,171,576,165.3C672,160,768,192,864,197.3C960,203,1056,181,1152,165.3C1248,149,1344,139,1392,133.3L1440,128L1440,320L0,320Z"/></svg>
+      <svg viewBox="0 0 1440 320" preserveAspectRatio="none" style="opacity:.15"><path fill="rgba(74,107,42,.4)" d="M0,224L48,208C96,192,192,160,288,154.7C384,149,480,171,576,186.7C672,203,768,213,864,202.7C960,192,1056,160,1152,149.3C1248,139,1344,149,1392,154.7L1440,160L1440,320L0,320Z"/></svg>
+    </div>
+    <div class="contact-content reveal">
+      <h2>Let's Make<br>It Happen</h2>
+      <p>Always open to new opportunities, collaborations, and creative challenges. Let's work together to bring your ideas to life.</p>
+      <div class="contact-links-row">
+        <a href="mailto:vivekmaddheshiya19@gmail.com" class="contact-chip">📧 vivekmaddheshiya19@gmail.com</a>
+        <a href="tel:+917237900686" class="contact-chip">📱 +91-7237900686</a>
+        <a href="https://github.com/vivekmaddy16" target="_blank" class="contact-chip">💻 GitHub</a>
+        <a href="https://linkedin.com/in/vivekm007" target="_blank" class="contact-chip">🔗 LinkedIn</a>
+      </div>
+      <a href="mailto:vivekmaddheshiya19@gmail.com" class="contact-btn">Get in Touch →</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <span>© 2026 Vivek Maddheshiya. All rights reserved.</span>
+    <div><a href="#home">Home</a><a href="#aboutme">About</a><a href="#projects">Projects</a><a href="https://github.com/vivekmaddy16" target="_blank">GitHub</a><a href="#contact">Contact</a></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
