@@ -35,7 +35,9 @@ function initThreeJS(){
     const g=new THREE.IcosahedronGeometry(cfg.s,4);
     const m=new THREE.MeshPhysicalMaterial({color:cfg.c,roughness:.25,metalness:.05,transparent:true,opacity:.5,clearcoat:.5,clearcoatRoughness:.15});
     const mesh=new THREE.Mesh(g,m);mesh.position.set(cfg.x,cfg.y,cfg.z);
-    mesh.userData={sp:cfg.sp,o:{x:cfg.x,y:cfg.y,z:cfg.z},ph:Math.random()*Math.PI*2,sz:cfg.s};
+    /* Store original vertex positions so deformation doesn't compound */
+    const origPositions=new Float32Array(g.attributes.position.array);
+    mesh.userData={sp:cfg.sp,o:{x:cfg.x,y:cfg.y,z:cfg.z},ph:Math.random()*Math.PI*2,sz:cfg.s,origPositions};
     scene.add(mesh);blobs.push(mesh);
   });
   scene.add(new THREE.AmbientLight(0xffffff,.6));
@@ -47,15 +49,18 @@ function initThreeJS(){
   (function animate(){
     requestAnimationFrame(animate);t+=.01;
     blobs.forEach(b=>{
-      const{sp,o,ph,sz}=b.userData;
+      const{sp,o,ph,sz,origPositions}=b.userData;
       b.position.x=o.x+Math.sin(t*sp*100+ph)*.5;
       b.position.y=o.y+Math.cos(t*sp*80+ph)*.4;
       b.position.z=o.z+Math.sin(t*sp*60+ph*.5)*.3;
       const p=b.geometry.attributes.position;
       for(let j=0;j<p.count;j++){
-        const x=p.getX(j),y=p.getY(j),z=p.getZ(j),l=Math.sqrt(x*x+y*y+z*z);
-        const n=Math.sin(x*2+t*2+ph)*Math.cos(y*2+t*1.5+ph)*Math.sin(z*2+t+ph)*.06;
-        const s=(sz+n)/l;p.setXYZ(j,x*s,y*s,z*s);
+        /* Read from the stored originals, not the already-mutated buffer */
+        const ox=origPositions[j*3],oy=origPositions[j*3+1],oz=origPositions[j*3+2];
+        const l=Math.sqrt(ox*ox+oy*oy+oz*oz);
+        const n=Math.sin(ox*2+t*2+ph)*Math.cos(oy*2+t*1.5+ph)*Math.sin(oz*2+t+ph)*.06;
+        const s=(sz+n)/l;
+        p.setXYZ(j,ox*s,oy*s,oz*s);
       }
       p.needsUpdate=true;b.geometry.computeVertexNormals();
       b.rotation.x+=sp*.5;b.rotation.y+=sp*.3;
@@ -95,12 +100,31 @@ function initCursor(){
 }
 
 function initSmooth(){
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t){t.scrollIntoView({behavior:'smooth'});document.getElementById('navMenu').classList.remove('active');}});
+  /* Handle the nav logo (href="#") separately — scroll to top */
+  document.querySelectorAll('a[href="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      e.preventDefault();
+      window.scrollTo({top:0,behavior:'smooth'});
+      document.getElementById('navMenu').classList.remove('active');
+    });
+  });
+  /* Handle all other anchor links (href="#section") */
+  document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(a=>{
+    a.addEventListener('click',e=>{
+      e.preventDefault();
+      const t=document.querySelector(a.getAttribute('href'));
+      if(t){t.scrollIntoView({behavior:'smooth'});document.getElementById('navMenu').classList.remove('active');}
+    });
   });
 }
 
 function initMenu(){
   const b=document.getElementById('menuToggle'),m=document.getElementById('navMenu');
-  if(b&&m)b.addEventListener('click',()=>m.classList.toggle('active'));
+  if(b&&m){
+    b.addEventListener('click',()=>m.classList.toggle('active'));
+    /* Keyboard accessibility for the hamburger */
+    b.addEventListener('keydown',e=>{
+      if(e.key==='Enter'||e.key===' '){e.preventDefault();m.classList.toggle('active');}
+    });
+  }
 }
