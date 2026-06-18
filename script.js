@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded',()=>{initThreeJS();initScrollReveal
 /* Project popup */
 const projectData={
   fixify:{title:'Fixify — Hyperlocal Service Marketplace',img:'assets/fixify.png',github:'https://github.com/vivekmaddy16'},
-  hireboost:{title:'HireBoost — Smart Resume Optimizer',img:'assets/hireboost.png',github:'https://github.com/vivekmaddy16'}
+  hireboost:{title:'HireBoost — Smart Resume Optimizer',img:'assets/hireboost.png',github:'https://github.com/vivekmaddy16'},
+  briefly:{title:'Briefly — AI News Aggregator',img:'assets/briefly.png',github:'https://github.com/vivekmaddy16'}
 };
 function openProjectPopup(id){
   const d=projectData[id];if(!d)return;
@@ -69,7 +70,15 @@ function initThreeJS(){
     cam.position.y+=(my*.3-cam.position.y)*.02;
     cam.lookAt(scene.position);r.render(scene,cam);
   })();
-  addEventListener('resize',()=>{cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();r.setSize(innerWidth,innerHeight);});
+  let lastWidth = window.innerWidth;
+  addEventListener('resize',()=>{
+    if(window.innerWidth !== lastWidth){
+      lastWidth = window.innerWidth;
+      cam.aspect=innerWidth/innerHeight;
+      cam.updateProjectionMatrix();
+      r.setSize(innerWidth,innerHeight);
+    }
+  });
 }
 
 function initScrollReveal(){
