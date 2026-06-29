@@ -83,4 +83,4 @@ For a smoother development experience, you can also run it with a local static s
 
 - Email: `vivekmaddheshiya19@gmail.com`
 - GitHub: `https://github.com/vivekmaddy16`
-- LinkedIn: `https://linkedin.com/in/vivekm007`
+- LinkedIn: `https://linkedin.com/in/vivekmaddy16`
