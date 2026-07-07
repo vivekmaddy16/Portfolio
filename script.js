@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded',()=>{initThreeJS();initScrollReveal
 
 /* Project popup */
 const projectData={
+  lobiie:{title:'Lobiie — Real-Time Chat & Video Platform',img:'assets/lobiie.png',github:'https://github.com/vivekmaddy16'},
   fixify:{title:'Fixify — Hyperlocal Service Marketplace',img:'assets/fixify.png',github:'https://github.com/vivekmaddy16'},
   hireboost:{title:'HireBoost — Smart Resume Optimizer',img:'assets/hireboost.png',github:'https://github.com/vivekmaddy16'},
   briefly:{title:'Briefly — AI News Aggregator',img:'assets/briefly.png',github:'https://github.com/vivekmaddy16'}
