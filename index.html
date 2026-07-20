@@ -8,7 +8,7 @@
   <meta name="description"
     content="Portfolio of Vivek Maddheshiya — Full Stack Developer specializing in React, Node.js, and scalable web applications.">
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 
 <body>
@@ -23,7 +23,7 @@
       </svg>
       B.Tech CSE · BBD University
     </div>
-    <div class="nav-hamburger" id="menuToggle" role="button" tabindex="0" aria-label="Toggle navigation menu">
+    <div class="nav-hamburger" id="menuToggle" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
       <span></span>
     </div>
     <div class="nav-menu" id="navMenu">
@@ -45,7 +45,7 @@
         connect users with value.</div>
       <div class="hero-cta-wrap"><a href="assets/Vivek_Maddheshiya_Resume.pdf" target="_blank" class="hero-cta">Resume</a></div>
       <div class="hero-avatars">
-        <img src="assets/profile.png" alt="">
+        <img src="assets/profile.png" alt="Vivek Maddheshiya Avatar">
         <div class="hero-avatars-info"><strong>Trusted by</strong>BBD University, Projects</div>
       </div>
     </div>
@@ -236,13 +236,13 @@
   </section>
 
   <!-- Project Popup Modal -->
-  <div class="proj-popup" id="projectPopup">
+  <div class="proj-popup" id="projectPopup" role="dialog" aria-modal="true" aria-labelledby="popupTitle" aria-hidden="true">
     <div class="proj-popup-overlay" onclick="closeProjectPopup()"></div>
     <div class="proj-popup-content">
-      <button class="proj-popup-close" onclick="closeProjectPopup()">✕</button>
+      <button class="proj-popup-close" onclick="closeProjectPopup()" aria-label="Close modal">✕</button>
       <h3 id="popupTitle"></h3>
       <div class="proj-popup-frame">
-        <img id="popupImage" src="" alt="Project Preview">
+        <img id="popupImage" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="Project Preview">
       </div>
       <div class="proj-popup-actions">
         <a id="popupGithub" href="" target="_blank" class="proj-link-btn">View on GitHub →</a>
